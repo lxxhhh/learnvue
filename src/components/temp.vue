@@ -25,7 +25,7 @@ var lqcomponent = {
     <city></city>
     </div>
     ` 
-   
+      
 }
 
 
