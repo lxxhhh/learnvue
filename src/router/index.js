@@ -6,6 +6,7 @@ import H2 from '@/components/H2'
 import params from '@/components/params'
 import Error from '@/components/Error'
 import temp from '@/components/temp'
+import props from '@/components/props'
 
 Vue.use(Router)
 
@@ -67,6 +68,10 @@ export default new Router({
     {
       path: '/temp',
       component: temp
+    },
+    {
+      path: '/props',
+      component: props
     }
   ]
 })

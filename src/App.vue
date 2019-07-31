@@ -24,6 +24,8 @@
 
 
      <router-link to="/temp">temp</router-link>| 
+
+     <router-link to="/props">props</router-link>| 
      
    
 

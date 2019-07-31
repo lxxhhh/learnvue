@@ -5,7 +5,11 @@
         <lxx></lxx>  <!-- 局部注册的组件 -->
         <zsy :here='message'></zsy>
         <lq></lq>
-    </div>
+
+        <component :is="componentId"></component>
+        <button @click="change">change</button>
+    </div> 
+    
 </template>
 
 
@@ -26,13 +30,24 @@ var lqcomponent = {
     </div>
     ` 
       
-}
+};
+
+var componentA = {
+    template:`<div style='color:red'>componentA</div>`
+};
+var componentB = {
+    template:`<div style='color:red'>componentB</div>`
+};
+var componentC = {
+    template:`<div style='color:red'>componentC</div>`
+};
 
 
 export default {
     data() {
         return {
-            message: 'lxx'
+            message: 'lxx',
+            componentId: 'componentA'
         }
     },
     components: {
@@ -42,7 +57,15 @@ export default {
             props:['here']
         },
         'lq' : lqcomponent,
-    }
+        'componentA': componentA,
+        'componentB': componentB,
+        'componentC': componentC,
+    },
+    methods: {
+        change(){
+            this.componentId == 'componentA' ? this.componentId = 'componentB' : this.componentId == 'componentB' ? this.componentId = 'componentC' : this.componentId == 'componentC' ? this.componentId = 'componentA':''
+        }
+    },
 }
 </script>
 
